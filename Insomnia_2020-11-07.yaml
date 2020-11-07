@@ -1,0 +1,231 @@
+_type: export
+__export_format: 4
+__export_date: 2020-11-07T02:16:35.885Z
+__export_source: insomnia.desktop.app:v2020.4.2
+resources:
+  - _id: req_wrk_89ff9596a2d74b899529f22a0ab90670291d5d43
+    parentId: wrk_89ff9596a2d74b899529f22a0ab90670
+    modified: 1604715350000
+    created: 1604277600504
+    url: "{{ base_url }}/api/v1/person/{{ id }}"
+    name: Delete a person by Id
+    description: ""
+    method: DELETE
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1604277600504
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: wrk_89ff9596a2d74b899529f22a0ab90670
+    parentId: null
+    modified: 1604715350040
+    created: 1604190401277
+    name: SpringBoot tutorial 1.0.0
+    description: ""
+    scope: spec
+    _type: workspace
+  - _id: req_wrk_89ff9596a2d74b899529f22a0ab906707323dd61
+    parentId: wrk_89ff9596a2d74b899529f22a0ab90670
+    modified: 1604715349993
+    created: 1604277600500
+    url: "{{ base_url }}/api/v1/person/{{ id }}"
+    name: Update a person
+    description: ""
+    method: PUT
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "string"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1604277600500
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_89ff9596a2d74b899529f22a0ab9067084d9715a
+    parentId: wrk_89ff9596a2d74b899529f22a0ab90670
+    modified: 1604715350005
+    created: 1604276683640
+    url: "{{ base_url }}/api/v1/person/{{ id }}"
+    name: Find one person by Id
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1604276683640
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_89ff9596a2d74b899529f22a0ab90670c6b6e4e5
+    parentId: wrk_89ff9596a2d74b899529f22a0ab90670
+    modified: 1604715350016
+    created: 1604192640274
+    url: "{{ base_url }}/api/v1/person"
+    name: Retrieve all people
+    description: ""
+    method: GET
+    body: {}
+    parameters: []
+    headers: []
+    authentication: {}
+    metaSortKey: -1604192640274
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: req_wrk_89ff9596a2d74b899529f22a0ab906702cb54bbf
+    parentId: wrk_89ff9596a2d74b899529f22a0ab90670
+    modified: 1604715350011
+    created: 1604192176100
+    url: "{{ base_url }}/api/v1/person"
+    name: Submit a new person
+    description: ""
+    method: POST
+    body:
+      mimeType: application/json
+      text: |-
+        {
+          "name": "string"
+        }
+    parameters: []
+    headers:
+      - name: Content-Type
+        value: application/json
+    authentication: {}
+    metaSortKey: -1604192176101
+    isPrivate: false
+    settingStoreCookies: true
+    settingSendCookies: true
+    settingDisableRenderRequestBody: false
+    settingEncodeUrl: true
+    settingRebuildPath: true
+    settingFollowRedirects: global
+    _type: request
+  - _id: env_eb4a3da0d9a0f6fb4684fe0a4549a816be6df2a1
+    parentId: wrk_89ff9596a2d74b899529f22a0ab90670
+    modified: 1604715350032
+    created: 1604190401329
+    name: Base environment
+    data:
+      base_url: "{{ scheme }}://{{ host }}{{ base_path }}"
+    dataPropertyOrder: null
+    color: null
+    isPrivate: false
+    metaSortKey: 1604190401330
+    _type: environment
+  - _id: jar_eb4a3da0d9a0f6fb4684fe0a4549a816be6df2a1
+    parentId: wrk_89ff9596a2d74b899529f22a0ab90670
+    modified: 1604190401333
+    created: 1604190401333
+    name: Default Jar
+    cookies: []
+    _type: cookie_jar
+  - _id: spc_8120161b25c9485499bd5702741f5981
+    parentId: wrk_89ff9596a2d74b899529f22a0ab90670
+    modified: 1604715350051
+    created: 1604190401280
+    fileName: Insomnia Designer
+    contents: |-
+      openapi: 3.0.0
+      info:
+        version: 1.0.0
+        title: SpringBoot tutorial
+      servers:
+        - url: http://localhost:8080
+      paths:
+        /api/v1/person:
+          get:
+            summary: Retrieve all people
+            tags:
+              - persons
+          post:
+            summary: Submit a new person
+            tags: 
+              - persons
+            requestBody:
+              content:
+                'application/json':
+                  required: true
+                  schema:
+                    $ref: "#/components/schemas/person"
+                  example:
+                    name: "James Bond"
+            responses:
+              description: a success indication (1 is success)
+        /api/v1/person/{id}:
+          get:
+            summary: Find one person by Id
+            tags:
+              - persons
+          delete:
+            summary: Delete a person by Id
+            tags:
+              - persons
+          put:
+            summary: Update a person
+            tags:
+              - persons
+            requestBody:
+              content:
+                'application/json':
+                  required: true
+                  schema:
+                    $ref: "#/components/schemas/person"
+                  example:
+                    name: "James Bond"
+      components:
+        schemas:
+          person:
+            type: object
+            properties:
+              name:
+                type: string
+    contentType: yaml
+    _type: api_spec
+  - _id: env_env_eb4a3da0d9a0f6fb4684fe0a4549a816be6df2a1_sub
+    parentId: env_eb4a3da0d9a0f6fb4684fe0a4549a816be6df2a1
+    modified: 1604715350027
+    created: 1604192176106
+    name: OpenAPI env
+    data:
+      scheme: http
+      base_path: ""
+      host: localhost:8080
+    dataPropertyOrder:
+      "&":
+        - scheme
+        - base_path
+        - host
+    color: null
+    isPrivate: false
+    metaSortKey: 1604192176106
+    _type: environment
